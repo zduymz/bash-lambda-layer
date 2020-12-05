@@ -3,10 +3,12 @@
 
 PWD := $(shell pwd)
 
+default: build publish
+
 build:
 	@rm -rf export
 	@mkdir export
-	@zip -yr export/layer.zip bootstrap bin lib
+	@zip -yr export/layer.zip bootstrap bin lib etc
 
 publish:
 	@$(PWD)/publish.sh
